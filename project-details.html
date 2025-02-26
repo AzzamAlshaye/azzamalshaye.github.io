@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Project Details - Azzam Alshaye</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+  </head>
+  <body class="is-preload">
+    <div id="wrapper">
+      <header id="header">
+        <a href="index.html" class="logo">My Portfolio</a>
+      </header>
+
+      <div id="main">
+        <article class="post">
+          <header class="major">
+            <h1 id="project-title">Project Title</h1>
+            <p id="project-description">
+              Project description will be loaded here.
+            </p>
+          </header>
+          <span class="image main"
+            ><img id="project-image" src="" alt="Project Image"
+          /></span>
+          <p id="project-details">More details about the project...</p>
+          <ul class="actions special">
+            <li><a href="index.html" class="button">Back to Portfolio</a></li>
+          </ul>
+        </article>
+      </div>
+
+      <footer id="footer">
+        <p>&copy; Azzam Alshaye 2025</p>
+      </footer>
+    </div>
+
+    <script>
+      // Get URL parameters
+      const urlParams = new URLSearchParams(window.location.search);
+      const project = urlParams.get("project");
+
+      // Project data
+      const projects = {
+        project1: {
+          title: "ADLAS Hub",
+          description: "Flutter Application",
+          image: "images/Adlas_Hub.png",
+          details:
+            "AdlasHub is a Flutter-based room reservation application designed for employees and guests. Employees can book rooms for teaching, while guests also have access to reservations. The app includes a calendar view to track all bookings and room details. The admin panel allows administrators to create and manage users, approve or reject reservation requests, view user details, and access the calendar for all reservations. Built using Flutter, Dart, and Firebase, AdlasHub ensures a seamless and efficient experience.",
+        },
+        project2: {
+          title: "NeighborlyExchange",
+          description: "Flutter Platform for Borrowing Goods Between Neighbors",
+          image: "images/NeighborlyExchange.png",
+          details:
+            "NeighborlyExchange is a platform designed to enhance communication and relationships between neighbors by enabling the borrowing and lending of goods. It includes an optional insurance feature, allowing product owners to receive compensation if their item is damaged. The application addresses the lack of a centralized system for borrowing items, overcoming communication barriers, and reducing unnecessary purchases or wastage within communities. This platform fosters resource sharing and strengthens neighborhood ties.",
+        },
+        project3: {
+          title: "Adlas Saudi National Day Fashion Competition",
+          description: "Website for Fashion Competition",
+          image: "images/Adlas_Website.png",
+          details:
+            "The Adlas Saudi National Day Fashion Competition website provides detailed information about the competition, including its goals and objectives. It also highlights the rewards available for the winners. Built using HTML, CSS, JavaScript, and Tailwind CSS, the site offers an engaging user experience with clear navigation and visually appealing design elements. The website aims to promote creativity and celebrate national pride through fashion.",
+        },
+      };
+
+      // Load project data dynamically
+      if (project && projects[project]) {
+        document.getElementById("project-title").innerText =
+          projects[project].title;
+        document.getElementById("project-description").innerText =
+          projects[project].description;
+        document.getElementById("project-image").src = projects[project].image;
+        document.getElementById("project-details").innerText =
+          projects[project].details;
+      } else {
+        document.getElementById("project-title").innerText =
+          "Project Not Found";
+        document.getElementById("project-description").innerText =
+          "No details available.";
+      }
+    </script>
+  </body>
+</html>
